@@ -1,0 +1,123 @@
+﻿@model IEnumerable<ResultMamangementSystem.Models.ResultMo>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-white bg-dark border-bottom box-shadow mb-3">
+        <div class="container-fluid ">
+            <a class="navbar-brand text-white" asp-area="" asp-controller="Result" asp-action="Index">ResultManagmentSystem</a>
+            
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link  text-white " asp-area="" asp-controller="Admin" asp-action="Index">Student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-white " asp-area="" asp-controller="Admin" asp-action="Logout">Logout</a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="" style="width:500px; height:40px; ">
+    <h3 class="" id="TagLine" style="padding-left:40px;  color:green; "></h3>
+</div>
+<p>
+    <a asp-action="Create" style="margin-left:10px;" class=" btn btn-success col-2 mt-3 text-white btn-outline-info">Add Result</a>
+</p>
+<table class="table table-dark  table-striped table-hover table-sm " style="width:98%" align="center">
+    <thead>
+        <tr >
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RollNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CSharp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AspDotNet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mvc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Angular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sqln)
+            </th>
+            <th>@Html.DisplayName("Total")</th>
+            <th>@Html.DisplayName("Percentage")</th>
+            <th>@Html.DisplayName("Decision")</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr >
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RollNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CSharp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AspDotNet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mvc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Angular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sqln)
+            </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalSum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Percentaged)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.Decision)
+                </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id } , new{ @class="btn btn-success"}) 
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    var typed = new Typed('#TagLine', {
+        strings: ['Result Management System', 'Add Student Result '],
+        typeSpeed: 50,
+        backspeed: 20,
+        loop: true
+    });
+</script>
+@Html.Partial("_ToastrNotification");

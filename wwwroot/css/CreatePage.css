@@ -1,0 +1,21 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+}
+
+  .formdatad{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;  
+    align-items: center;
+   }
+    .formdatad .Right {
+        width: 500px;
+        margin-left: 50px;
+    }
+
+    .formdatad .imgdata, img {
+        width: 650px;
+       
+   
+    }

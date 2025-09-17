@@ -1,0 +1,48 @@
+﻿body {
+    margin:0px;
+    padding: 0px;
+  display:block;
+}
+.containerData {
+  /*  display:flex;
+    flex-direction:column;
+    align-content: center;*/
+
+}
+.ImgContant {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ImgContant ,p {
+    font-family:math;
+    font-size:1.6rem;
+    padding-top:10px;
+}
+.formdata {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    .formdata .row {
+       
+        padding-bottom: 10px;
+    }
+    .formdata .form-label {
+       
+        font-size: 1.2rem;
+        font-family: math;
+    }
+    .formdata .formContaint {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 8px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border: 1px solid gray;
+        border-radius: 8px;
+        box-shadow: 10px 10px lightblue;
+        background-color: aliceblue;
+    }

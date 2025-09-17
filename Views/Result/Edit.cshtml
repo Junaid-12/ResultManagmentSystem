@@ -1,0 +1,81 @@
+﻿@model ResultMamangementSystem.Models.ResultMo;  
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-white bg-dark border-bottom box-shadow mb-3 ">
+            <div class="container-fluid justify-content-evenly">
+
+                <div class="navbar-collapse collapse d-sm-inline-flex ">
+                    <ul class="navbar-nav flex-grow-1">
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link text-white" asp-area="" asp-controller="Result" asp-action="Index">Student-Result-List</a>
+                        </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link text-white" asp-area="" asp-controller="Admin" asp-action="Logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="formdatad mt-5">
+           <div class="Right" style="width:500px;">
+            <form id="myForm3" method="post">
+                <div class=" row  mb-2">
+                    <label class="form-label">ROll No</label>
+
+                    <input class="form-control" id="Rollno" asp-for="RollNo" readonly />
+                    @*   @Html.DropDownListFor(m => m.RollNo, ViewBag.rnList as SelectList, "Select Student Rollno", new { @class = "form-control" }) *@
+                </div>
+                <div class="row mb-2 ">
+                    <label class="form-label">CSharp</label>
+                    <input type="number" class="form-control" id="Name" asp-for="CSharp" />
+                </div>
+                <div class="row  mb-2">
+                    <label class="form-label">AspDotNet</label>
+                    <input type="number" class="form-control" id="Name" asp-for="AspDotNet" />
+                </div>
+                <div class="row mb-2">
+                    <label class="form-label">Mvc </label>
+                    <input type="number" class="form-control" id="FstherName" asp-for="Mvc" />
+                </div>
+                <div class="row  mb-2">
+                    <label class="form-label">Angular</label>
+                    <input type="number" class="form-control" id="Email" asp-for="Angular" />
+                </div>
+                <div class="row  mb-2">
+                    <label class="form-label">Sql</label>
+                    <input type="number" class="form-control" id="Password" asp-for="Sqln" />
+                </div>
+                <div class="row d-inline mt-3">
+                    <button class="btn btn-success">Submit</button>
+                    <button class="btn btn-danger">Cancle</button>
+                </div>
+            </form>
+           </div>
+        <div class="imgdata">
+                <img src="~/Img/Update.jpg"/>
+           </div>
+            
+        </div>
+   
+</body>
+</html>
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/createpage.css" rel="stylesheet" />

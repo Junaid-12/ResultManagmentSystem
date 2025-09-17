@@ -1,0 +1,55 @@
+﻿body {
+    margin:0px;
+    padding:0px;
+}
+
+
+.report-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.report-card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .report-card-header img {
+        width: 80px;
+        margin-bottom: 10px;
+    }
+
+    .report-card-header h2 {
+        margin-bottom: 0;
+        font-weight: bold;
+    }
+
+    .report-card-header p {
+        margin-bottom: 5px;
+    }
+
+.student-info {
+    margin-bottom: 20px;
+}
+
+    .student-info .info-label {
+        font-weight: bold;
+        width: 150px;
+    }
+
+.grades-table th,
+.grades-table td {
+    text-align: center;
+}
+
+.footer-note {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #6c757d;
+}
+

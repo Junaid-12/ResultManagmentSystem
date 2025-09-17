@@ -1,0 +1,74 @@
+﻿@model ResultMamangementSystem.Models.ResultMo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-white bg-dark border-bottom box-shadow mb-3 text-white  ">
+       <h3 style="margin-left:15px;"> Studetn All Result Info</h3>
+   </nav>
+   
+
+    <table class=" table table-data  table-hover table-info   mt-3 m-3  table-bordered table-sm  vertical-align-bottom align-content-center " style="width:40%;">
+        
+
+        <tr class="  ">
+            <td class="col-1 p-1 "> @Html.DisplayNameFor(Model => Model.Id)</td>
+            <td class=" col-1 p-1"> @Html.DisplayFor(Model => Model.Id)</td>
+        </tr>
+        <tr >
+            <td class=" col-1 p-1"> @Html.DisplayNameFor(Model => Model.RollNo)</td>
+            <td class=" col-1 p-1">@Html.DisplayFor(Model => Model.RollNo)</td>
+
+        </tr>
+        <tr >
+            <td class=" col-1 p-1"> @Html.DisplayNameFor(Model => Model.CSharp)</td>
+            <td class=" col-1 p-1"> @Html.DisplayFor(Model => Model.CSharp)</td>
+        </tr>
+        <tr >
+            <td class=" col-1 p-1"> @Html.DisplayNameFor(Model => Model.AspDotNet)</td>
+            <td class=" col-1 p-1"> @Html.DisplayFor(Model => Model.AspDotNet)</td>
+        </tr>
+        <tr >
+            <td class=" col-1 p-1"> @Html.DisplayNameFor(Model => Model.Mvc)</td>
+            <td class=" col-1 p-1"> @Html.DisplayFor(Model => Model.Mvc)</td>
+
+        </tr>
+        <tr >
+            <td class=" col-1 p-1"> @Html.DisplayNameFor(Model => Model.Angular)</td>
+            <td class=" col-1 p-1"> @Html.DisplayFor(Model => Model.Angular)</td>
+        </tr>
+        <tr >
+            <td class=" col-1 p-1"> @Html.DisplayNameFor(Model => Model.Sqln)</td>
+            <td class=" col-1 p-1"> @Html.DisplayFor(Model => Model.Sqln)</td>
+        </tr>
+        <tr>
+            <td class=" col-1 p-1"> @Html.DisplayNameFor(Model => Model.TotalSum)</td>
+            <td class=" col-1 p-1"> @Html.DisplayFor(Model => Model.TotalSum)</td>
+        </tr>
+        <tr >
+            <td class=" col-1 p-1"> @Html.DisplayNameFor(Model => Model.Percentaged)</td>
+            <td class=" col-1 p-1"> @Html.DisplayFor(Model => Model.Percentaged)</td>
+        </tr>
+        <tr>
+            <td class=" col-1 p-1"> @Html.DisplayNameFor(Model => Model.Decision)</td>
+            <td class=" col-1 p-1"> @Html.DisplayFor(Model => Model.Decision)</td>
+        </tr>
+
+
+
+    </table>
+    <a asp-action="Index" class="btn btn-danger " style="margin-left:20px;">Back to List</a>
+</body>
+</html>
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> 

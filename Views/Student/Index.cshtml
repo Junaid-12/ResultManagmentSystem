@@ -1,0 +1,144 @@
+﻿@model List<ResultManagmentSystem.Models.Data.ReportCardMo>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link href="~/css/resultcard.css" rel="stylesheet" />
+
+
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-white bg-dark border-bottom box-shadow mb-3">
+        <div class="container-fluid ">
+            <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">ResultManagmentSystem</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link  text-white " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                  
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+@if(Model!=null && Model.Count > 0)
+{
+    @foreach(var item in Model)
+    {
+        <div id="printDiv" class="container mt-2">
+       <div class="report-card">
+        <div class="report-card-header">
+          
+            <h2>BSM College & Engg </h2>
+                    <p>@item.Address | Email: @item.Email </p>
+                    <p> | Phone: @item.MobileNo |  <span class="info-label">Course:</span> CSE-1</p>
+        </div>
+
+        <div class="student-info">
+            <div class="row mb-3">
+                <div class="col-md-6 d-flex">
+                    <span class="info-label">Student Name:</span>@item.Name
+                </div>
+                <div class="col-md-6 d-flex">
+                    <span class="info-label">Roll Number:</span>@item.RollNo
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6 d-flex">
+                            <span class="info-label">DateOfBirth:</span> @Html.DisplayFor(modelitem=>item.DateOfBirth)
+                </div>
+                <div class="col-md-6 d-flex">
+                            <span class="info-label">FatherName:</span>@item.FatherName
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered grades-table">
+            <thead class="table-dark">
+                <tr>
+                    <th>Subject</th>
+                    <th>Marks Obtained</th>
+                    <th>Max Marks</th>
+                    <th >Decision</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                     <td>CSharp</td>
+                    <td>@item.CSharp</td>
+                    <td>100</td>
+              
+                </tr>
+                <tr>
+                            <td>AspDotNet</td>
+                    <td>@item.AspDotNet</td>
+                    <td>100</td>
+                   
+                </tr>
+                <tr>
+                    <td>Mvc</td>
+                    <td>@item.Mvc</td>
+                    <td>100</td>
+                    <td>100/@item.Percentaged </td>
+                    
+                </tr>
+                <tr>
+                    <td>Angular</td>
+                    <td>@item.Angular</td>
+                    <td>100</td>
+                 
+                </tr>
+                <tr>
+                    <td>Sql</td>
+                    <td>@item.Sqln</td>
+                    <td>100</td>
+                
+                </tr>
+            </tbody>
+            <tfoot class="table-light">
+                <tr>
+                    <th>Total</th>
+                    <th>@item.TotalSum</th>
+                    <th>500</th>
+                    <th >@item.Decision</th>
+                </tr>
+            </tfoot>
+        </table>
+
+              
+             
+                <div class="footer-note">
+                    <p>Note: This is a computer-generated report and does not require a signature.</p>
+                </div>
+         </div>
+         
+       </div>
+       
+    }
+}
+<a id="PrintPDF" class="btn btn-primary mt-1 " style="margin-left:360px;">Download as PDF</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<!-- Toastr JS -->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $("#PrintPDF").click(function () {
+        var element = document.getElementById('printDiv');
+        html2pdf().from(element).set({
+            margin: [30, 10, 5, 10],
+            pagebreak: { avoid: 'tr' },
+            js: { orientation: 'landscape', unit: 'pt', format: 'letter', compressPDF: true }
+        }).save()
+    
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@Html.Partial("_ToastrNotification")

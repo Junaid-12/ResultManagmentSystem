@@ -1,0 +1,42 @@
+﻿    @model ResultMamangementSystem.Models.StudentMo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-white bg-dark border-bottom box-shadow mb-3 text-white  ">
+    <h3 style="margin-left:15px;"> Studetn All Info</h3>
+</nav>
+<table class=" table table-info  table-hover table-info   mt-3 m-3   table-bordered  " style="width:40%;">
+        <tr >
+            <td class="col-1 "> @Html.DisplayNameFor(Model=>Model.RollNo)</td>
+        <td class="col-1 "> @Html.DisplayFor(Model => Model.RollNo)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(Model => Model.Name)</td>
+            <td>@Html.DisplayFor(Model => Model.Name)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(Model => Model.FatherName)</td>
+            <td>@Html.DisplayFor(Model => Model.FatherName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(Model => Model.Email)</td>
+            <td>@Html.DisplayFor(Model => Model.Email)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(Model => Model.MobileNo)</td>
+            <td>@Html.DisplayFor(Model => Model.MobileNo)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(Model => Model.Address)</td>
+            <td>@Html.DisplayFor(Model => Model.Address)</td>
+        </tr>
+       
+    </table>
+    
+    <a asp-action="Index" class="btn btn-danger " style="margin-left:20px;">Back to List</a>
+    
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> 

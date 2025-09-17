@@ -1,0 +1,118 @@
+﻿@model ResultMamangementSystem.Models.ResultMo
+
+
+
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-white bg-dark border-bottom box-shadow mb-3 ">
+        <div class="container-fluid justify-content-evenly">
+
+            <div class="navbar-collapse collapse d-sm-inline-flex ">
+                <ul class="navbar-nav flex-grow-1">
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link text-white" asp-area="" asp-controller="Result" asp-action="Index">Student-Result-List</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link text-white" asp-area="" asp-controller="Admin" asp-action="Logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="formdatad mt-3  ">
+
+    <div class="Right" style="width:500px;">
+                <form method="post" id="myForm2" novalidate>
+            <div class=" row mb-2">
+                <label class="form-label" for="List">ROll No</label>
+                @*  <select asp-for="RollNo" class="form-control" asp-items="ViewBag.RollNo" ><option>---Select RollNo---</option></select> *@
+
+                @Html.DropDownListFor(m => m.RollNo, ViewBag.rnList as SelectList, "Select Student Rollno", new { @class = "form-control ", required = "required" })
+                <div class="invalid-feedback">
+                   Select Roll-no
+                </div>
+            </div>
+
+            <div class="row mb-2 ">
+                <label class="form-label" for="CSharp">CSharp</label>
+                <input type="number" class="form-control" id="CSharp" asp-for="CSharp" min="0" max="100" placeholder="Enter Number A" required />
+                <div class="invalid-feedback">
+                    Enter A number between 0 To 100 
+                </div>
+
+            </div>
+            <div class="row   mb-2">
+
+                <label class="form-label" for="AspDotNet">AspDotNet</label>
+                <input type="number" class="form-control" id="AspDotNet" asp-for="AspDotNet" min="0" max="100" placeholder="Enter Number A" required />
+                <div class="invalid-feedback">
+                    Enter A number between 0 To 100
+                </div>
+            </div>
+            <div class="row   mb-2">
+                <label class="form-label">Mvc </label>
+                <input type="number" class="form-control" id="FstherName" asp-for="Mvc" min="0" max="100" placeholder="Enter Number A" required />
+                <div class="invalid-feedback">
+                    Enter A number between 0 To 100
+                </div>
+            </div>
+ 
+    <div class="row   mb-2">
+        <label class="form-label" for="Angular">Angular</label>
+                <input type="number" class="form-control" id="Angular" asp-for="Angular" min="0" max="100" placeholder="Enter NumberA" required />
+                <div class="invalid-feedback">
+                    Enter A number between 0 To 100
+                </div>
+    </div>
+    <div class="row   mb-2">
+        <label class="form-label" for="Sql">Sql</label>
+        <input type="number" class="form-control" id="Sql" asp-for="Sqln" min="0" max="100" placeholder="Enter Number A" required/>
+                <div class="invalid-feedback">
+                    Enter A number between 0 To 100
+                </div>
+    </div>
+
+    <div class="col-3 mt-2 d-inline">
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button class="btn btn-Danger " style="margin-left:20px;" type="reset" >Reset</button>
+    </div>
+                </form>
+              </div>
+        <div class="imgdata" >
+            <img src="~/Img//ResultUpdate.png"  />
+        </div>
+ </div>
+ 
+
+
+
+
+
+<link href="~/css/createpage.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+<script>
+    // JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        'use strict';
+
+        const form = document.querySelector('#myForm2');
+
+        form.addEventListener('submit', (event) => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+        });
+    })();
+</script>

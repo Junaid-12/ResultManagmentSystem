@@ -1,0 +1,77 @@
+﻿@model ResultMamangementSystem.Models.StudentMo
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-white bg-dark border-bottom box-shadow mb-3 ">
+        <div class="container-fluid justify-content-evenly">
+
+            <div class="navbar-collapse collapse d-sm-inline-flex ">
+                <ul class="navbar-nav flex-grow-1">
+
+                     <li class="nav-item">
+
+                        <a class="nav-link text-white"  >Update Student Details</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link text-white" asp-area="" asp-controller="Admin" asp-action="Index">Student-List</a>
+                    </li>
+                   >
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+
+<div class="formdatad mt-4">
+     <div class="Right">
+        <form method="post">
+            <div class="row col-12 mb-2 ">
+                <label class="form-label">Change Student  RollNo</label>
+                <input type="text" class="form-control" id="RollNo" asp-for="RollNo" />
+            </div>
+            <div class="row  col-12 mb-2 ">
+                <label class="form-label">Change Student  Name</label>
+                <input type="text" class="form-control" id="Name" asp-for="Name" />
+            </div>
+            <div class="row   col-12 mb-2 ">
+                <label class="form-label">Change Student Father Name </label>
+                <input type="text" class="form-control" id="FstherName" asp-for="FatherName" />
+            </div>
+            <div class="row  col-12 mb-2 ">
+                <label class="form-label">Change Student Email</label>
+                <input type="email" class="form-control" id="Email" asp-for="Email" />
+            </div>
+            <div class="row  col-12 mb-2 ">
+                <label class="form-label">Change Student Email</label>
+                <input type="date" class="form-control" id="DateOfBirth"  asp-for="DateOfBirth" />
+            </div>
+            <div class="row  col-12 mb-2 ">
+                <label class="form-label">Change Student Mobile-Number</label>
+                <input type="text" class="form-control" id="MobileNo" asp-for="MobileNo" />
+            </div>
+            <div class="row  col-12 mb-2 ">
+                <label class="form-label">Change Student Address </label>
+                <input type="text" class="form-control" id="Address" asp-for="Address" />
+            </div>
+
+            <div class=" row col-3 mt-2 d-inline">
+                <button type="submit" class="btn btn-success">Update</button>
+                <button class="btn btn-Danger" asp-action="Index">Cancle</button>
+            </div>
+
+        </form>
+     </div>
+    <div class="imgdata">
+        <img src="~/Img/head-slider-boy.svg"  />
+     </div>
+    </div>
+
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/createpage.css" rel="stylesheet" />

@@ -1,0 +1,142 @@
+﻿@model ResultMamangementSystem.Models.StudentMo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-white bg-dark border-bottom box-shadow mb-3 ">
+        <div class="container-fluid justify-content-evenly">
+           
+            <div class="navbar-collapse collapse d-sm-inline-flex ">
+                <ul class="navbar-nav flex-grow-1">
+                   
+                    
+                    <li class="nav-item">
+
+                        <a class="nav-link text-white" asp-area="" asp-controller="Admin" asp-action="Index">Student-List</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link text-white" asp-area="" asp-controller="Admin" asp-action="Logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+    <div class=" formdatad  mt-3 ">
+
+    <div class="Right" style="width:500px;">
+        
+
+            <form class="needs-validation" id="myForm" method="post" novalidate>
+                <div class="  mb-3">
+                    <label class="form-label ">Roll Number</label>
+                    <input type="text" class="form-control" id="Name" asp-for="RollNo" required maxlength="6" />
+                    <div class="invalid-feedback text-opacity-25">
+                        Please Enter Student Roll Number
+                    </div>
+                </div>
+                <div class="  col-12  mb-3">
+                    <label class="form-label " for="Name">Enter Student  Name</label>
+                    <input type="text" class="form-control" id="Name" asp-for="Name" required />
+                    <div class="invalid-feedback">
+                        Please Enter Student Name
+                    </div>
+                </div>
+                <div class=" mt-1  col-12 mb-2">
+                    <label class="form-label" for="FatherName">Enter Student Father Name </label>
+                    <input type="text" class="form-control" id="FatherName" asp-for="FatherName" required />
+                    <div class="invalid-feedback">
+                        Please Enter Father Name
+                    </div>
+                </div>
+                <div class=" col-12   mb-2">
+                <label class="form-label" for="Email">Enter Student Email</label>
+                    <input type="email" class="form-control" id="Email" asp-for="Email" required />
+                    <div class="invalid-feedback">
+                        Please Enter Email
+                    </div>
+                </div>
+            <div class=" col-12   mb-2">
+                <label class="form-label" fro="DateOfBirth">Enter Student Email</label>
+                <input type="date" class="form-control" id="DateOfBirth" name="DateOfBirth" asp-for="DateOfBirth" required />
+                <div class="invalid-feedback">
+                    Please Enter Email
+                </div>
+            </div>
+                <div class="  col-12  mb-2">
+                    <label class="form-label">Enter Student Mobile-Number</label>
+                <input type="text" class="form-control" id="MobileNo" name="MobileNo" asp-for="MobileNo" pattern="^\d{10}$" required />
+                    <div class="invalid-feedback">
+                        Please Enter Exectically Mobile Number
+                    </div>
+                </div>
+                <div class="  col-12  mb-2">
+                    <label class="form-label">Enter Student Address </label>
+                    <input type="text" class="form-control" id="Password" asp-for="Address" required />
+                    <div class="invalid-feedback">
+                        Please Enter Student Address
+                    </div>
+                </div>
+
+                <div class="  col-3 mt-3 d-inline">
+                    <button type="submit" id="toNotify" class="btn btn-success" value="Success" asp-page-handler="SuccessNotification">Submit</button>
+                    <button class="btn btn-Danger" type="reset">Reset</button>
+                </div>
+            </form>
+       
+      </div>
+     
+    <div class="imgdata" width="400px;" hegith="400px;">
+       <img src="~/Img/Registrationform.jpg" />
+    </div>
+    </div>
+
+
+<link href="~/css/createpage.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+
+<script>
+    // JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        'use strict';
+
+        const form = document.querySelector('#myForm');
+
+        form.addEventListener('submit', (event) => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            form.classList.add('was-validated');
+        });
+    })();
+   
+
+    //Toster Notification
+    (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+    
+</script>

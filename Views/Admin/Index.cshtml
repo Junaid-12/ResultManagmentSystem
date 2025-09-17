@@ -1,0 +1,132 @@
+﻿@model IEnumerable<ResultMamangementSystem.Models.StudentMo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-white bg-dark border-bottom box-shadow mb-3">
+        <div class="container-fluid ">
+            <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Student Management</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+
+                        <a class="nav-link text-white" asp-area="" asp-controller="Result" asp-action="Index">Result</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-white " asp-area="" asp-controller="Admin" asp-action="Logout">Logout</a>
+                    </li>
+                    
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+  
+
+
+<div class="" style="width:500px; height:40px; ">
+    <h3 class="" id="TagLine" style="padding-left:40px;  color:green; "> </h3>
+</div>
+
+<p class="m-3 "  >
+    <a asp-action="Create" style="margin-left:10px;" class="btn btn-success col-2 btn-outline-info text-white">Create New</a>
+</p>
+<table class="table  table-dark table-hover table-sm align-items-center " style="width:98%" align="center" >
+    <thead>
+        <tr>
+           <th>@Html.DisplayNameFor(Model=>Model.Id)</th>
+            <th>
+                @Html.DisplayNameFor(model => model.RollNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FatherName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobileNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>@Html.DisplayName("Action")</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr class="bg-dark text-white">
+          <td>
+              @Html.DisplayFor(modelitem=>item.Id)
+          </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RollNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.FatherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+                <td>
+                   @*  @item.DateOfBirth.ToString("MM-dd-yyyy") *@
+                    @Html.DisplayFor(modelItem => item.DateOfBirth) 
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td >
+        
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success " }) 
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info " }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-Danger " })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<!-- Toastr CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+<!-- Toastr JS -->
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<script type="text/javascript">
+    var typed = new Typed('#TagLine', {
+        strings: ['Student Management System' ,'Create New  Student '],
+        typeSpeed: 50,
+        backspeed:20,
+        loop:true
+    });
+   
+</script>
+@Html.Partial("_ToastrNotification");
